@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegant Earrings Shop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="payment-modal.css">
+    <link rel="stylesheet" href="confirmation-styles.css">
+    <link rel="stylesheet" href="notifications.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Elegant Earrings</div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="user-actions">
+            <div class="cart">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </div>
+            <div class="user-menu">
+                <button id="menuToggleBtn" class="menu-toggle-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="profile-dropdown" id="profileMenu" style="display: none;">
+                    <div class="profile-header">
+                        <img src="https://via.placeholder.com/32" alt="Profile" class="profile-pic">
+                        <span class="user-name" id="userNameDisplay">roweces987</span>
+                    </div>
+                    <div class="profile-menu-items">
+                        <a href="profile.html" class="profile-menu-item">
+                            <i class="fas fa-user-circle"></i> My Profile
+                        </a>
+                        <a href="profile.html#orders" class="profile-menu-item">
+                            <i class="fas fa-shopping-bag"></i> My Orders
+                        </a>
+                        <a href="profile.html#addresses" class="profile-menu-item">
+                            <i class="fas fa-map-marker-alt"></i> My Addresses
+                        </a>
+                        <a href="profile.html#wishlist" class="profile-menu-item">
+                            <i class="fas fa-heart"></i> Wishlist
+                            <span class="wishlist-count">0</span>
+                        </a>
+                        <a href="#" class="profile-menu-item" id="logoutBtn">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1>Discover Beautiful Earrings</h1>
+            <p>Handcrafted with love and elegance</p>
+            <a href="#products" class="cta-button">Shop Now</a>
+        </div>
+    </header>
+
+    <!-- Payment Modal -->
+    <div id="payment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closePaymentModal">&times;</span>
+            <h2>Make Payment</h2>
+            
+            <div class="payment-details">
+                <div class="product-summary">
+                    <img id="payment-product-image" src="" alt="Product Image">
+                    <div class="product-info">
+                        <h3 id="payment-product-name"></h3>
+                        <p id="payment-product-price"></p>
+                    </div>
+                </div>
+
+                <div class="payment-options">
+                    <div class="upi-payment">
+                        <h3>UPI Payment</h3>
+                        <div class="qr-container">
+                            <img id="merchant-qr" src="QR code.jpg" alt="Merchant QR Code">
+                        </div>
+                        <div class="upi-details">
+                            <p>UPI ID: <span id="merchant-upi">ky187768@okicici</span></p>
+                            <p>Scan QR code above to pay</p>
+                        </div>
+                        <button id="openUpiApp" class="payment-button">
+                            <i class="fab fa-google-pay"></i> Pay with Google Pay
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="payment-actions">
+                <button id="confirmPayment" class="primary-button">Confirm Payment</button>
+                <button id="cancelPayment" class="secondary-button">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <section id="products" class="products">
+        <h2>Our Collection</h2>
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search earrings...">
+                <button class="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+        <div class="product-grid">
+            <div class="product-card" data-material="Crystal, Silver" data-size="4.5 cm" data-style="Modern">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>
+                <img src="image.png" alt="Earring 1">
+                <h3>Crystal Drop Earrings</h3>
+                <p class="price">₹999</p>
+                <button class="buy-now">Buy Now</button>
+                <!-- <button class="add-to-cart">Add to Cart</button> -->
+            </div>
+            <div class="product-card" data-material="Gold Plated" data-size="3.5 cm" data-style="Classic">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>  
+                <img src="image copy 2.png" alt="Earring 2">
+                <h3>Gold Hoops</h3>
+                <p class="price">₹1,499</p>
+                <button class="buy-now">Buy Now</button>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-card" data-material="Pearl, Sterling Silver" data-size="1 cm" data-style="Elegant">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>
+                <img src="image copy 3.png" alt="Earring 3">
+                <h3>Pearl Studs</h3>
+                <p class="price">₹799</p>
+                <button class="buy-now">Buy Now</button>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-card" data-material="Oxidized Silver" data-size="5 cm" data-style="Traditional">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>
+                <img src="image copy 8.png" alt="Earring 4">
+                <h3>Antique Danglers</h3>
+                <p class="price">₹1,299</p>
+                <button class="buy-now">Buy Now</button>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-card" data-material="Gold Plated, Crystal" data-size="3.8 cm" data-style="Contemporary">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>
+                <img src="image copy 4.png" alt="Earring 5">
+                <h3>Crystal Earrings</h3>
+                <p class="price">₹1,799</p>
+                <button class="buy-now">Buy Now</button>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-card" data-material="Rose Gold" data-size="2.5 cm" data-style="Modern">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>
+                <img src="image copy 5.png" alt="Earring 6">
+                <h3>Rose Gold Studs</h3>
+                <p class="price">₹1,199</p>
+                <button class="buy-now">Buy Now</button>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-card" data-material="Sterling Silver, Zircon" data-size="4 cm" data-style="Elegant">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>
+                <img src="image copy 6.png" alt="Earring 7">
+                <h3>Zircon Drop Earrings</h3>
+                <p class="price">₹1,599</p>
+                <button class="buy-now">Buy Now</button>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-card" data-material="Kundan, Gold Plated" data-size="5.5 cm" data-style="Traditional">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>
+                <img src="image copy 7.png" alt="Earring 8">
+                <h3>Kundan Jhumkas</h3>
+                <p class="price">₹2,499</p>
+                <button class="buy-now">Buy Now</button>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-card" data-material="Gold Plated, Pearl" data-size="4.2 cm" data-style="Contemporary">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>
+                <img src="image copy 9.png" alt="Earring 9">
+                <h3>Pearl Drop Jhumkas</h3>
+                <p class="price">₹1,899</p>
+                <button class="buy-now">Buy Now</button>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-card" data-material="Silver, Emerald" data-size="3.8 cm" data-style="Royal">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>
+                <img src="image copy 10.png" alt="Earring 10">
+                <h3>Emerald Royal Danglers</h3>
+                <p class="price">₹2,299</p>
+                <button class="buy-now">Buy Now</button>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-card" data-material="Rose Gold, Diamond" data-size="2.8 cm" data-style="Modern">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>
+                <img src="image copy 11.png" alt="Earring 11">
+                <h3>Diamond Touch Studs</h3>
+                <p class="price">₹2,999</p>
+                <button class="buy-now">Buy Now</button>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-card" data-material="Oxidized Silver, Ruby" data-size="4.5 cm" data-style="Traditional">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>
+                <img src="image copy 12.png" alt="Earring 12">
+                <h3>Ruby Traditional Jhumkas</h3>
+                <p class="price">₹1,999</p>
+                <button class="buy-now">Buy Now</button>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-card" data-material="Gold Plated, Sapphire" data-size="3.5 cm" data-style="Elegant">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>
+                <img src="image copy 13.png" alt="Earring 13">
+                <h3>Sapphire Elegance</h3>
+                <p class="price">₹2,199</p>
+                <button class="buy-now">Buy Now</button>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-card" data-material="Silver, Pearl" data-size="3.2 cm" data-style="Modern">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>
+                <img src="image copy 14.png" alt="Earring 14">
+                <h3>Modern Pearl Drops</h3>
+                <p class="price">₹1,699</p>
+                <button class="buy-now">Buy Now</button>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-card" data-material="Gold Plated, Crystal" data-size="4.0 cm" data-style="Contemporary">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>
+                <img src="image copy 15.png" alt="Earring 15">
+                <h3>Crystal Cascade</h3>
+                <p class="price">₹1,899</p>
+                <button class="buy-now">Buy Now</button>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-card" data-material="Rose Gold, Pearl" data-size="3.5 cm" data-style="Elegant">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>
+                <img src="image copy 16.png" alt="Earring 16">
+                <h3>Pearl Romance</h3>
+                <p class="price">₹2,099</p>
+                <button class="buy-now">Buy Now</button>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-card" data-material="Silver, Emerald" data-size="4.2 cm" data-style="Royal">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>
+                <img src="image copy 17.png" alt="Earring 17">
+                <h3>Emerald Queen</h3>
+                <p class="price">₹2,499</p>
+                <button class="buy-now">Buy Now</button>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-card" data-material="Gold Plated, Ruby" data-size="3.8 cm" data-style="Traditional">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>
+                <img src="image copy 18.png" alt="Earring 18">
+                <h3>Ruby Tradition</h3>
+                <p class="price">₹2,299</p>
+                <button class="buy-now">Buy Now</button>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-card" data-material="Oxidized Silver, Pearl" data-size="4.5 cm" data-style="Vintage">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>
+                <img src="image copy 19.png" alt="Earring 19">
+                <h3>Vintage Pearl Glory</h3>
+                <p class="price">₹1,799</p>
+                <button class="buy-now">Buy Now</button>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-card" data-material="Gold Plated, Sapphire" data-size="3.6 cm" data-style="Modern">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>
+                <img src="image copy 20.png" alt="Earring 20">
+                <h3>Sapphire Dreams</h3>
+                <p class="price">₹2,399</p>
+                <button class="buy-now">Buy Now</button>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-card" data-material="Silver, Diamond" data-size="3.0 cm" data-style="Contemporary">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>
+                <img src="image copy 21.png" alt="Earring 21">
+                <h3>Diamond Dazzle</h3>
+                <p class="price">₹2,999</p>
+                <button class="buy-now">Buy Now</button>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-card" data-material="Gold Plated, Pearl" data-size="4.2 cm" data-style="Traditional">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>
+                <img src="image copy 22.png" alt="Earring 22">
+                <h3>Pearl Heritage</h3>
+                <p class="price">₹1,999</p>
+                <button class="buy-now">Buy Now</button>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-card" data-material="Rose Gold, Crystal" data-size="3.8 cm" data-style="Modern">
+                <div class="wishlist-icon">
+                    <i class="far fa-heart"></i>
+                </div>
+                <img src="image copy 23.png" alt="Earring 23">
+                <h3>Crystal Bloom</h3>
+                <p class="price">₹2,199</p>
+                <button class="buy-now">Buy Now</button>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>We specialize in creating beautiful, handcrafted earrings that make you feel elegant and confident. Each piece is made with attention to detail and quality materials.</p>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>&copy; 2025 Elegant Earrings. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content cart-modal-content">
+            <span class="close-modal" id="close-cart">&times;</span>
+            <h2>Shopping Cart</h2>
+            <div class="cart-items">
+                <!-- Cart items will be added here dynamically -->
+            </div>
+            <div class="cart-summary">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span class="total-amount">₹0</span>
+                </div>
+                <button class="checkout-button" disabled>Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Details Modal -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="product-details">
+                <div class="product-image-large">
+                    <img src="" alt="Product Image" id="modal-product-image">
+                </div>
+                <div class="product-info">
+                    <h2 id="modal-product-name"></h2>
+                    <p class="price" id="modal-product-price"></p>
+                    <div class="product-description">
+                        <h3>Product Details</h3>
+                        <ul>
+                            <li>Material: <span id="modal-material"></span></li>
+                            <li>Size: <span id="modal-size"></span></li>
+                            <li>Style: <span id="modal-style"></span></li>
+                        </ul>
+                    </div>
+                    <form class="order-form">
+                        <div class="form-group">
+                            <label for="quantity">Quantity:</label>
+                            <input type="number" id="quantity" min="1" value="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="customer-name">Your Name:</label>
+                            <input type="text" id="customer-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="customer-email">Email:</label>
+                            <input type="email" id="customer-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="customer-phone">Phone:</label>
+                            <input type="tel" id="customer-phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="delivery-address">Delivery Address:</label>
+                            <textarea id="delivery-address" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="payment-method">Payment Method:</label>
+                            <select id="payment-method" required>
+                                <option value="">Select Payment Method</option>
+                                <option value="cod">Cash on Delivery</option>
+                                <option value="upi">UPI</option>
+                                <option value="card">Credit/Debit Card</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="order-button">Place Order</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div id="payment-modal" class="modal">
+        <div class="modal-content payment-modal">
+            <span class="close-modal" id="closePaymentModal">&times;</span>
+            <div class="payment-header">
+                <h2>Select Payment Method</h2>
+                <div class="order-summary">
+                    <div class="product-summary">
+                        <img id="paymentProductImage" class="payment-product-image" src="" alt="Product">
+                        <div class="product-details">
+                            <h3 id="paymentProductName"></h3>
+                            <p id="paymentProductPrice"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="payment-options">
+                <label class="payment-option">
+                    <input type="radio" name="payment" value="upi">
+                    <div class="option-content">
+                        <i class="fas fa-mobile-alt"></i>
+                        <div>
+                            <h4>UPI Payment</h4>
+                            <p>Pay using UPI ID or QR Code</p>
+                        </div>
+                    </div>
+                </label>
+                <label class="payment-option">
+                    <input type="radio" name="payment" value="card">
+                    <div class="option-content">
+                        <i class="fas fa-credit-card"></i>
+                        <div>
+                            <h4>Credit/Debit Card</h4>
+                            <p>Pay using any major card</p>
+                        </div>
+                    </div>
+                </label>
+                <label class="payment-option">
+                    <input type="radio" name="payment" value="cod">
+                    <div class="option-content">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <div>
+                            <h4>Cash on Delivery</h4>
+                            <p>Pay when you receive</p>
+                        </div>
+                    </div>
+                </label>
+            </div>
+
+            <!-- Payment Forms Container -->
+            <div class="payment-forms">
+                <!-- UPI Form -->
+                <div id="upi-form" class="payment-form">
+                    <h3>Enter UPI Details</h3>
+                    <div class="form-group">
+                        <input type="text" placeholder="Enter UPI ID (e.g., name@upi)">
+                    </div>
+                    <div class="form-group">
+                        <button class="pay-now-btn" onclick="processPayment('upi')">
+                            Pay Now <span id="upiAmount"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card Form -->
+                <div id="card-form" class="payment-form">
+                    <h3>Enter Card Details</h3>
+                    <div class="form-group">
+                        <input type="text" placeholder="Card Number" maxlength="16">
+                    </div>
+                    <div class="card-extra-details">
+                        <div class="form-group">
+                            <input type="text" placeholder="MM/YY" maxlength="5">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="CVV" maxlength="3">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Card Holder Name">
+                    </div>
+                    <div class="form-group">
+                        <button class="pay-now-btn" onclick="processPayment('card')">
+                            Pay Now <span id="cardAmount"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- COD Form -->
+                <div id="cod-form" class="payment-form">
+                    <h3>Cash on Delivery</h3>
+                    <div class="cod-info">
+                        <p>Additional COD charges: ₹50</p>
+                        <p class="total-amount">Total Amount: <span id="codAmount"></span></p>
+                    </div>
+                    <div class="form-group">
+                        <button class="pay-now-btn" onclick="processPayment('cod')">
+                            Place Order
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

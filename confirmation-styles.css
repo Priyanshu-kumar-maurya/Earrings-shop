@@ -1,0 +1,43 @@
+.confirmation-details {
+    text-align: center;
+    padding: 20px;
+}
+
+.order-summary {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.success-message {
+    color: #2ecc71;
+    margin: 20px 0;
+}
+
+.success-message i {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.success-message p {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+#closeConfirmation {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#closeConfirmation:hover {
+    background-color: #45a049;
+}

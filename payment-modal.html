@@ -1,0 +1,38 @@
+<!-- Payment Modal -->
+<div id="payment-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closePaymentModal">&times;</span>
+        <h2>Make Payment</h2>
+        
+        <div class="payment-details">
+            <div class="product-summary">
+                <img id="payment-product-image" src="" alt="Product Image">
+                <div class="product-info">
+                    <h3 id="payment-product-name"></h3>
+                    <p id="payment-product-price"></p>
+                </div>
+            </div>
+
+            <div class="payment-options">
+                <div class="upi-payment">
+                    <h3>UPI Payment</h3>
+                    <div class="qr-container">
+                        <img id="merchant-qr" src="QR code.jpg" alt="Merchant QR Code">
+                    </div>
+                    <div class="upi-details">
+                        <p>UPI ID: <span id="merchant-upi">ky187768@okicici</span></p>
+                        <p>Scan QR code above to pay</p>
+                    </div>
+                    <button id="openUpiApp" class="payment-button">
+                        <i class="fas fa-qrcode"></i> Open UPI App
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="payment-actions">
+            <button id="confirmPayment" class="primary-button">Confirm Payment</button>
+            <button id="cancelPayment" class="secondary-button">Cancel</button>
+        </div>
+    </div>
+</div>
