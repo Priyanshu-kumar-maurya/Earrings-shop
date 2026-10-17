@@ -1,562 +1,1533 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elegant Earrings Shop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="Aura Jewels & Elegant Earrings — Handcrafted Royal Kundan, Sparkling Zircon Drops, Hallmarked 925 Sterling Silver & Pearl Studs.">
+    <meta name="keywords" content="earrings, jewellery shop, kundan jhumka, pearl studs, 925 silver earrings, online earrings store, fashion jewelry India">
+    <meta name="author" content="Priyanshu Kumar Maurya">
+    <title>Aura Jewels &mdash; Elegant Handcrafted Earrings &amp; Haute Joaillerie</title>
+
+    <!-- Google Fonts: Playfair Display (Luxury Headings), Plus Jakarta Sans (Body), JetBrains Mono (Codes/Prices) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 6.5 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Main Stylesheet & Addons -->
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="payment-modal.css">
-    <link rel="stylesheet" href="confirmation-styles.css">
-    <link rel="stylesheet" href="notifications.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">Elegant Earrings</div>
-        <div class="menu-toggle">
-            <i class="fas fa-bars"></i>
-        </div>
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#products">Products</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-        </div>
-        <div class="user-actions">
-            <div class="cart">
-                <i class="fas fa-shopping-cart"></i>
-                <span class="cart-count">0</span>
+    <!-- Top Announcement Bar -->
+    <div class="top-announcement-bar">
+        <div class="container announcement-content">
+            <div class="announcement-left">
+                <span class="sparkle-icon">✨</span>
+                <span>FESTIVE LUXURY DROP: USE CODE <strong class="promo-code">ROYAL20</strong> FOR 20% OFF ALL COLLECTIONS</span>
             </div>
-            <div class="user-menu">
-                <button id="menuToggleBtn" class="menu-toggle-btn">
+            <div class="announcement-right">
+                <span><i class="fas fa-truck-moving"></i> Free Express Shipping Pan-India</span>
+                <span class="divider">•</span>
+                <span><i class="fas fa-gem"></i> 100% Hallmarked &amp; Hypoallergenic</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <header id="main-header" class="site-header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- Mobile Hamburger Button -->
+                <button class="menu-toggle-btn mobile-only" id="mobileMenuBtn" aria-label="Open Navigation Menu">
                     <i class="fas fa-bars"></i>
                 </button>
-                <div class="profile-dropdown" id="profileMenu" style="display: none;">
-                    <div class="profile-header">
-                        <img src="https://via.placeholder.com/32" alt="Profile" class="profile-pic">
-                        <span class="user-name" id="userNameDisplay">roweces987</span>
+
+                <!-- Brand Logo -->
+                <a href="#home" class="logo">
+                    <div class="logo-crown-icon">
+                        <i class="fas fa-crown"></i>
                     </div>
-                    <div class="profile-menu-items">
-                        <a href="profile.html" class="profile-menu-item">
-                            <i class="fas fa-user-circle"></i> My Profile
-                        </a>
-                        <a href="profile.html#orders" class="profile-menu-item">
-                            <i class="fas fa-shopping-bag"></i> My Orders
-                        </a>
-                        <a href="profile.html#addresses" class="profile-menu-item">
-                            <i class="fas fa-map-marker-alt"></i> My Addresses
-                        </a>
-                        <a href="profile.html#wishlist" class="profile-menu-item">
-                            <i class="fas fa-heart"></i> Wishlist
-                            <span class="wishlist-count">0</span>
-                        </a>
-                        <a href="#" class="profile-menu-item" id="logoutBtn">
-                            <i class="fas fa-sign-out-alt"></i> Logout
-                        </a>
+                    <div class="logo-text-group">
+                        <span class="brand-name">AURA <span class="gold-text">JEWELS</span></span>
+                        <span class="brand-tagline">Elegant Earrings Atelier</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <div class="nav-links">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#featured" class="nav-link">Spotlight</a>
+                    <a href="#products" class="nav-link">All Earrings</a>
+                    <a href="#craftsmanship" class="nav-link">Purity &amp; Care</a>
+                    <a href="#reviews" class="nav-link">Testimonials</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+
+                <!-- Right Action Bar: Search, Wishlist, Cart, Theme, Profile -->
+                <div class="user-actions">
+                    <!-- Live Search Toggle Button -->
+                    <button id="searchToggleBtn" class="action-icon-btn" title="Search Earrings" aria-label="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
+
+                    <!-- Wishlist Button with Counter -->
+                    <a href="profile.html#wishlist" class="action-icon-btn wishlist-btn" title="View Wishlist" aria-label="Wishlist">
+                        <i class="far fa-heart"></i>
+                        <span class="badge-count wishlist-count">0</span>
+                    </a>
+
+                    <!-- Shopping Cart Button with Counter -->
+                    <button class="action-icon-btn cart-btn" id="openCartDrawerBtn" title="View Shopping Bag" aria-label="Shopping Bag">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="badge-count cart-count">0</span>
+                    </button>
+
+                    <!-- Theme Switcher (Dark / Light) -->
+                    <button id="themeToggleBtn" class="action-icon-btn theme-toggle-btn" title="Switch Theme" aria-label="Toggle Theme">
+                        <i class="fas fa-moon moon-icon"></i>
+                        <i class="fas fa-sun sun-icon"></i>
+                    </button>
+
+                    <!-- User Account Dropdown -->
+                    <div class="user-menu-wrapper">
+                        <button id="menuToggleBtn" class="user-avatar-btn" aria-label="User Account">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Avatar" class="profile-pic">
+                            <i class="fas fa-chevron-down caret-icon"></i>
+                        </button>
+                        <div class="profile-dropdown" id="profileMenu">
+                            <div class="profile-header">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Profile" class="dropdown-avatar">
+                                <div class="dropdown-user-info">
+                                    <strong class="user-name" id="userNameDisplay">Priyanshu Maurya</strong>
+                                    <span class="user-tier"><i class="fas fa-crown text-gold"></i> Royal Member</span>
+                                </div>
+                            </div>
+                            <div class="profile-menu-items">
+                                <a href="profile.html" class="profile-menu-item">
+                                    <i class="fas fa-user-circle"></i> My Profile
+                                </a>
+                                <a href="profile.html#orders" class="profile-menu-item">
+                                    <i class="fas fa-box-open"></i> My Orders
+                                </a>
+                                <a href="profile.html#wishlist" class="profile-menu-item">
+                                    <i class="fas fa-heart"></i> Saved Wishlist (<span class="dropdown-wishlist-count">0</span>)
+                                </a>
+                                <a href="profile.html#addresses" class="profile-menu-item">
+                                    <i class="fas fa-map-marker-alt"></i> Shipping Addresses
+                                </a>
+                                <div class="menu-divider"></div>
+                                <a href="login.html" class="profile-menu-item logout-link" id="logoutBtn">
+                                    <i class="fas fa-sign-out-alt"></i> Sign Out
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
-    <header id="home" class="hero">
-        <div class="hero-content">
-            <h1>Discover Beautiful Earrings</h1>
-            <p>Handcrafted with love and elegance</p>
-            <a href="#products" class="cta-button">Shop Now</a>
+        <!-- Collapsible Search Drawer / Search Bar -->
+        <div id="searchBarDrawer" class="search-bar-drawer">
+            <div class="container search-drawer-inner">
+                <i class="fas fa-search search-input-icon"></i>
+                <input type="text" id="search-input" placeholder="Search by name, crystal, silver, kundan, jhumka, or style..." autocomplete="off">
+                <button id="closeSearchDrawer" class="close-search-btn">&times;</button>
+            </div>
         </div>
     </header>
 
-    <!-- Payment Modal -->
-    <div id="payment-modal" class="modal">
-        <div class="modal-content">
-            <span class="close" id="closePaymentModal">&times;</span>
-            <h2>Make Payment</h2>
-            
-            <div class="payment-details">
-                <div class="product-summary">
-                    <img id="payment-product-image" src="" alt="Product Image">
-                    <div class="product-info">
-                        <h3 id="payment-product-name"></h3>
-                        <p id="payment-product-price"></p>
+    <!-- Mobile Drawer Menu Overlay -->
+    <div class="mobile-nav-drawer" id="mobileDrawer">
+        <div class="mobile-drawer-header">
+            <div class="logo">
+                <i class="fas fa-crown text-gold"></i>
+                <span>AURA <span class="gold-text">JEWELS</span></span>
+            </div>
+            <button id="closeMobileDrawer" class="close-drawer-btn">&times;</button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li><a href="#home"><i class="fas fa-home"></i> Home Overview</a></li>
+            <li><a href="#featured"><i class="fas fa-sparkles"></i> Curated Spotlight</a></li>
+            <li><a href="#products"><i class="fas fa-gem"></i> Full Collection (24 Designs)</a></li>
+            <li><a href="#craftsmanship"><i class="fas fa-certificate"></i> Purity &amp; Hallmarks</a></li>
+            <li><a href="#reviews"><i class="fas fa-star"></i> Patron Testimonials</a></li>
+            <li><a href="#contact"><i class="fas fa-envelope"></i> Contact &amp; Concierge</a></li>
+            <li><a href="profile.html"><i class="fas fa-user"></i> My Royal Profile</a></li>
+        </ul>
+        <div class="mobile-drawer-footer">
+            <a href="https://wa.me/918576943716?text=Hello%20Aura%20Jewels,%20I%20am%20interested%20in%20ordering%20earrings!" target="_blank" class="btn btn-whatsapp btn-block">
+                <i class="fab fa-whatsapp"></i> Chat on WhatsApp Concierge
+            </a>
+        </div>
+    </div>
+    <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+    <!-- Hero Showcase Section -->
+    <section id="home" class="hero">
+        <div class="hero-ambient-glow glow-gold"></div>
+        <div class="hero-ambient-glow glow-rose"></div>
+        <div class="container hero-container">
+            <div class="hero-grid">
+                <!-- Hero Left: Headline & Pitch -->
+                <div class="hero-text-content">
+                    <div class="luxury-pill">
+                        <i class="fas fa-star text-gold"></i>
+                        <span>HANDCRAFTED ROYAL ELEGANCE &bull; 2026 COUTURE</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Adorn Your Radiance with <span class="gold-shimmer-text">Timeless Artisan Splendor.</span>
+                    </h1>
+                    <p class="hero-description">
+                        Curated royal kundan jhumkas, sparkling Austrian crystals, pure 925 sterling silver, 
+                        and ethereal pearls meticulously sculpted for festive grandeur and daily glamour.
+                    </p>
+
+                    <div class="hero-cta-group">
+                        <a href="#products" class="btn btn-gold btn-glow">
+                            <i class="fas fa-gem"></i>
+                            <span>Explore 24 Masterpieces</span>
+                        </a>
+                        <a href="#featured" class="btn btn-glass">
+                            <i class="fas fa-sparkles"></i>
+                            <span>View Spotlight Drops</span>
+                        </a>
+                    </div>
+
+                    <!-- Trust Strip -->
+                    <div class="hero-trust-metrics">
+                        <div class="trust-metric-item">
+                            <i class="fas fa-certificate text-gold"></i>
+                            <div>
+                                <strong>100% Certified Purity</strong>
+                                <span>Anti-Tarnish 925 Silver</span>
+                            </div>
+                        </div>
+                        <div class="metric-divider"></div>
+                        <div class="trust-metric-item">
+                            <i class="fas fa-shield-alt text-gold"></i>
+                            <div>
+                                <strong>Hypoallergenic</strong>
+                                <span>100% Nickel-Free Skin Safe</span>
+                            </div>
+                        </div>
+                        <div class="metric-divider"></div>
+                        <div class="trust-metric-item">
+                            <i class="fas fa-box text-gold"></i>
+                            <div>
+                                <strong>Velvet Box Packaging</strong>
+                                <span>Ready for Gifting</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="payment-options">
-                    <div class="upi-payment">
-                        <h3>UPI Payment</h3>
-                        <div class="qr-container">
-                            <img id="merchant-qr" src="QR code.jpg" alt="Merchant QR Code">
+                <!-- Hero Right: Interactive 3D Showcase Card -->
+                <div class="hero-showcase-col">
+                    <div class="hero-floating-card">
+                        <div class="hero-img-box">
+                            <img src="image copy 10.png" alt="Featured Royal Emerald Danglers" class="hero-main-img">
+                            <div class="hero-card-tag">FESTIVE BESTSELLER</div>
                         </div>
-                        <div class="upi-details">
-                            <p>UPI ID: <span id="merchant-upi">ky187768@okicici</span></p>
-                            <p>Scan QR code above to pay</p>
+                        <div class="hero-card-details">
+                            <div class="hero-card-flex">
+                                <div>
+                                    <h3 class="hero-card-title">Emerald Royal Danglers</h3>
+                                    <span class="hero-card-mat">Sterling Silver &bull; Natural Emerald</span>
+                                </div>
+                                <div class="hero-card-price">
+                                    <span class="old-price">₹499</span>
+                                    <span class="current-price">₹209</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-gold btn-block quick-buy-hero" data-product="Emerald Royal Danglers" data-price="₹209" data-image="image copy 10.png">
+                                <i class="fas fa-bolt"></i> Instant Buy via UPI
+                            </button>
                         </div>
-                        <button id="openUpiApp" class="payment-button">
-                            <i class="fab fa-google-pay"></i> Pay with Google Pay
-                        </button>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="payment-actions">
-                <button id="confirmPayment" class="primary-button">Confirm Payment</button>
-                <button id="cancelPayment" class="secondary-button">Cancel</button>
+    <!-- Curated Spotlight / Featured Collections Bento -->
+    <section id="featured" class="section spotlight-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">HANDCRAFTED THEMES</span>
+                <h2 class="section-title">Curated <span class="gold-shimmer-text">Festive Spotlight</span></h2>
+                <p class="section-caption">Explore three distinctive aesthetics crafted for weddings, evening galas, and sleek workwear.</p>
+            </div>
+
+            <div class="spotlight-bento-grid">
+                <!-- Theme 1: Royal Heritage Kundan -->
+                <div class="spotlight-card card-kundan">
+                    <img src="image copy 7.png" alt="Royal Kundan Jhumkas" class="spotlight-bg-img">
+                    <div class="spotlight-overlay">
+                        <span class="spotlight-badge">TRADITIONAL HERITAGE</span>
+                        <h3>Royal Kundan &amp; Jhumkas</h3>
+                        <p>Intricate Meenakari detailing, gold vermeil plating, and classic festive bells.</p>
+                        <a href="#products" class="spotlight-link" data-filter-trigger="Traditional">Shop Traditional <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Theme 2: Crystal & Zircon Romance -->
+                <div class="spotlight-card card-crystal">
+                    <img src="image.png" alt="Austrian Crystal Drops" class="spotlight-bg-img">
+                    <div class="spotlight-overlay">
+                        <span class="spotlight-badge">MODERN COUTURE</span>
+                        <h3>Sparkling Crystals &amp; Drops</h3>
+                        <p>Faceted high-refraction crystals that capture moonlight and candlelight alike.</p>
+                        <a href="#products" class="spotlight-link" data-filter-trigger="Modern">Shop Modern <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Theme 3: Timeless Pearl Classics -->
+                <div class="spotlight-card card-pearls">
+                    <img src="image copy 3.png" alt="Ethereal Pearl Studs" class="spotlight-bg-img">
+                    <div class="spotlight-overlay">
+                        <span class="spotlight-badge">EFFORTLESS DAILY CHIC</span>
+                        <h3>Lustrous Natural Pearls</h3>
+                        <p>Understated elegance for boardrooms, intimate brunches, and graceful soirees.</p>
+                        <a href="#products" class="spotlight-link" data-filter-trigger="Elegant">Shop Pearls <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Products Collection -->
+    <section id="products" class="section products-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">THE FULL ATELIER CATALOG</span>
+                <h2 class="section-title">Discover Our <span class="gold-shimmer-text">Complete 24 Masterpieces</span></h2>
+                <p class="section-caption">Every pair is hand-inspected for stone clarity, weight balance, and polished to perfection.</p>
+            </div>
+
+            <!-- Filter Chips & Sorting Control Toolbar -->
+            <div class="collection-toolbar">
+                <div class="filter-chips-wrapper">
+                    <button class="filter-chip active" data-filter="all">All Earrings (24)</button>
+                    <button class="filter-chip" data-filter="Traditional">Royal Kundan &amp; Jhumkas</button>
+                    <button class="filter-chip" data-filter="Modern">Crystals &amp; Drops</button>
+                    <button class="filter-chip" data-filter="Elegant">Lustrous Pearls</button>
+                    <button class="filter-chip" data-filter="Royal">Emerald &amp; Gemstones</button>
+                    <button class="filter-chip" data-filter="Contemporary">Contemporary Hoops</button>
+                </div>
+
+                <div class="sort-selector-wrapper">
+                    <label for="priceSortSelect"><i class="fas fa-sort-amount-down"></i> Sort:</label>
+                    <select id="priceSortSelect" class="sort-select">
+                        <option value="featured">Featured Collection</option>
+                        <option value="price-asc">Price: Low to High</option>
+                        <option value="price-desc">Price: High to Low</option>
+                        <option value="name-asc">Alphabetical (A - Z)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Active Results Counter -->
+            <div class="results-meta-bar">
+                <span id="resultsCount">Showing all 24 curated designs</span>
+                <span class="guarantee-text"><i class="fas fa-shield-alt text-gold"></i> All orders include Luxury Velvet Gift Box</span>
+            </div>
+
+            <!-- 24 Earring Products Grid -->
+            <div class="product-grid" id="productGrid">
+                <!-- 1. Crystal Drop Earrings -->
+                <div class="product-card" data-id="1" data-material="Crystal, Silver" data-size="4.5 cm" data-style="Modern" data-price="299" data-name="Crystal Drop Earrings">
+                    <div class="card-badges">
+                        <span class="badge-tag tag-sale">SALE 20%</span>
+                        <button class="wishlist-icon" title="Save to Wishlist" aria-label="Save to Wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="product-thumb">
+                        <img src="image.png" alt="Crystal Drop Earrings" loading="lazy">
+                        <button class="quick-view-overlay-btn" title="Quick View">
+                            <i class="fas fa-eye"></i> Quick View
+                        </button>
+                    </div>
+                    <div class="card-info">
+                        <div class="rating-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            <span class="review-count">(142)</span>
+                        </div>
+                        <h3 class="product-title">Crystal Drop Earrings</h3>
+                        <p class="product-specs"><span>Crystal, Silver</span> &bull; <span>4.5 cm</span></p>
+                        <div class="price-row">
+                            <div class="prices">
+                                <span class="original-price">₹399</span>
+                                <span class="price">₹299</span>
+                            </div>
+                        </div>
+                        <div class="card-actions-group">
+                            <button class="btn btn-outline-gold btn-sm add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Cart
+                            </button>
+                            <button class="btn btn-gold btn-sm buy-now">
+                                <i class="fas fa-bolt"></i> Buy Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Gold Hoops -->
+                <div class="product-card" data-id="2" data-material="Gold Plated" data-size="3.5 cm" data-style="Classic" data-price="299" data-name="Gold Hoops">
+                    <div class="card-badges">
+                        <span class="badge-tag tag-popular">POPULAR</span>
+                        <button class="wishlist-icon" title="Save to Wishlist" aria-label="Save to Wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="product-thumb">
+                        <img src="image copy 2.png" alt="Gold Hoops" loading="lazy">
+                        <button class="quick-view-overlay-btn" title="Quick View"><i class="fas fa-eye"></i> Quick View</button>
+                    </div>
+                    <div class="card-info">
+                        <div class="rating-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span class="review-count">(98)</span>
+                        </div>
+                        <h3 class="product-title">Gold Hoops</h3>
+                        <p class="product-specs"><span>Gold Plated</span> &bull; <span>3.5 cm</span></p>
+                        <div class="price-row">
+                            <div class="prices">
+                                <span class="original-price">₹399</span>
+                                <span class="price">₹299</span>
+                            </div>
+                        </div>
+                        <div class="card-actions-group">
+                            <button class="btn btn-outline-gold btn-sm add-to-cart"><i class="fas fa-cart-plus"></i> Cart</button>
+                            <button class="btn btn-gold btn-sm buy-now"><i class="fas fa-bolt"></i> Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Pearl Studs -->
+                <div class="product-card" data-id="3" data-material="Pearl, Sterling Silver" data-size="1 cm" data-style="Elegant" data-price="239" data-name="Pearl Studs">
+                    <div class="card-badges">
+                        <span class="badge-tag tag-sale">BESTSELLER</span>
+                        <button class="wishlist-icon" title="Save to Wishlist" aria-label="Save to Wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="product-thumb">
+                        <img src="image copy 3.png" alt="Pearl Studs" loading="lazy">
+                        <button class="quick-view-overlay-btn" title="Quick View"><i class="fas fa-eye"></i> Quick View</button>
+                    </div>
+                    <div class="card-info">
+                        <div class="rating-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span class="review-count">(215)</span>
+                        </div>
+                        <h3 class="product-title">Pearl Studs</h3>
+                        <p class="product-specs"><span>Pearl, Sterling Silver</span> &bull; <span>1 cm</span></p>
+                        <div class="price-row">
+                            <div class="prices">
+                                <span class="original-price">₹349</span>
+                                <span class="price">₹239</span>
+                            </div>
+                        </div>
+                        <div class="card-actions-group">
+                            <button class="btn btn-outline-gold btn-sm add-to-cart"><i class="fas fa-cart-plus"></i> Cart</button>
+                            <button class="btn btn-gold btn-sm buy-now"><i class="fas fa-bolt"></i> Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Antique Danglers -->
+                <div class="product-card" data-id="4" data-material="Oxidized Silver" data-size="5 cm" data-style="Traditional" data-price="399" data-name="Antique Danglers">
+                    <div class="card-badges">
+                        <span class="badge-tag tag-popular">HERITAGE</span>
+                        <button class="wishlist-icon" title="Save to Wishlist" aria-label="Save to Wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="product-thumb">
+                        <img src="image copy 8.png" alt="Antique Danglers" loading="lazy">
+                        <button class="quick-view-overlay-btn" title="Quick View"><i class="fas fa-eye"></i> Quick View</button>
+                    </div>
+                    <div class="card-info">
+                        <div class="rating-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            <span class="review-count">(84)</span>
+                        </div>
+                        <h3 class="product-title">Antique Danglers</h3>
+                        <p class="product-specs"><span>Oxidized Silver</span> &bull; <span>5 cm</span></p>
+                        <div class="price-row">
+                            <div class="prices">
+                                <span class="original-price">₹549</span>
+                                <span class="price">₹399</span>
+                            </div>
+                        </div>
+                        <div class="card-actions-group">
+                            <button class="btn btn-outline-gold btn-sm add-to-cart"><i class="fas fa-cart-plus"></i> Cart</button>
+                            <button class="btn btn-gold btn-sm buy-now"><i class="fas fa-bolt"></i> Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Crystal Earrings -->
+                <div class="product-card" data-id="5" data-material="Gold Plated, Crystal" data-size="3.8 cm" data-style="Contemporary" data-price="199" data-name="Crystal Earrings">
+                    <div class="card-badges">
+                        <span class="badge-tag tag-sale">HOT VALUE</span>
+                        <button class="wishlist-icon" title="Save to Wishlist" aria-label="Save to Wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="product-thumb">
+                        <img src="image copy 4.png" alt="Crystal Earrings" loading="lazy">
+                        <button class="quick-view-overlay-btn" title="Quick View"><i class="fas fa-eye"></i> Quick View</button>
+                    </div>
+                    <div class="card-info">
+                        <div class="rating-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span class="review-count">(112)</span>
+                        </div>
+                        <h3 class="product-title">Crystal Earrings</h3>
+                        <p class="product-specs"><span>Gold Plated, Crystal</span> &bull; <span>3.8 cm</span></p>
+                        <div class="price-row">
+                            <div class="prices">
+                                <span class="original-price">₹299</span>
+                                <span class="price">₹199</span>
+                            </div>
+                        </div>
+                        <div class="card-actions-group">
+                            <button class="btn btn-outline-gold btn-sm add-to-cart"><i class="fas fa-cart-plus"></i> Cart</button>
+                            <button class="btn btn-gold btn-sm buy-now"><i class="fas fa-bolt"></i> Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Rose Gold Studs -->
+                <div class="product-card" data-id="6" data-material="Rose Gold" data-size="2.5 cm" data-style="Modern" data-price="299" data-name="Rose Gold Studs">
+                    <div class="card-badges">
+                        <button class="wishlist-icon" title="Save to Wishlist" aria-label="Save to Wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="product-thumb">
+                        <img src="image copy 5.png" alt="Rose Gold Studs" loading="lazy">
+                        <button class="quick-view-overlay-btn" title="Quick View"><i class="fas fa-eye"></i> Quick View</button>
+                    </div>
+                    <div class="card-info">
+                        <div class="rating-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span class="review-count">(76)</span>
+                        </div>
+                        <h3 class="product-title">Rose Gold Studs</h3>
+                        <p class="product-specs"><span>Rose Gold</span> &bull; <span>2.5 cm</span></p>
+                        <div class="price-row">
+                            <div class="prices">
+                                <span class="original-price">₹399</span>
+                                <span class="price">₹299</span>
+                            </div>
+                        </div>
+                        <div class="card-actions-group">
+                            <button class="btn btn-outline-gold btn-sm add-to-cart"><i class="fas fa-cart-plus"></i> Cart</button>
+                            <button class="btn btn-gold btn-sm buy-now"><i class="fas fa-bolt"></i> Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. Zircon Drop Earrings -->
+                <div class="product-card" data-id="7" data-material="Sterling Silver, Zircon" data-size="4 cm" data-style="Elegant" data-price="299" data-name="Zircon Drop Earrings">
+                    <div class="card-badges">
+                        <button class="wishlist-icon" title="Save to Wishlist" aria-label="Save to Wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="product-thumb">
+                        <img src="image copy 6.png" alt="Zircon Drop Earrings" loading="lazy">
+                        <button class="quick-view-overlay-btn" title="Quick View"><i class="fas fa-eye"></i> Quick View</button>
+                    </div>
+                    <div class="card-info">
+                        <div class="rating-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            <span class="review-count">(104)</span>
+                        </div>
+                        <h3 class="product-title">Zircon Drop Earrings</h3>
+                        <p class="product-specs"><span>Sterling Silver, Zircon</span> &bull; <span>4 cm</span></p>
+                        <div class="price-row">
+                            <div class="prices">
+                                <span class="original-price">₹449</span>
+                                <span class="price">₹299</span>
+                            </div>
+                        </div>
+                        <div class="card-actions-group">
+                            <button class="btn btn-outline-gold btn-sm add-to-cart"><i class="fas fa-cart-plus"></i> Cart</button>
+                            <button class="btn btn-gold btn-sm buy-now"><i class="fas fa-bolt"></i> Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. Kundan Jhumkas -->
+                <div class="product-card" data-id="8" data-material="Kundan, Gold Plated" data-size="5.5 cm" data-style="Traditional" data-price="119" data-name="Kundan Jhumkas">
+                    <div class="card-badges">
+                        <span class="badge-tag tag-sale">BESTSELLER</span>
+                        <button class="wishlist-icon" title="Save to Wishlist" aria-label="Save to Wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="product-thumb">
+                        <img src="image copy 7.png" alt="Kundan Jhumkas" loading="lazy">
+                        <button class="quick-view-overlay-btn" title="Quick View"><i class="fas fa-eye"></i> Quick View</button>
+                    </div>
+                    <div class="card-info">
+                        <div class="rating-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span class="review-count">(340)</span>
+                        </div>
+                        <h3 class="product-title">Kundan Jhumkas</h3>
+                        <p class="product-specs"><span>Kundan, Gold Plated</span> &bull; <span>5.5 cm</span></p>
+                        <div class="price-row">
+                            <div class="prices">
+                                <span class="original-price">₹199</span>
+                                <span class="price">₹119</span>
+                            </div>
+                        </div>
+                        <div class="card-actions-group">
+                            <button class="btn btn-outline-gold btn-sm add-to-cart"><i class="fas fa-cart-plus"></i> Cart</button>
+                            <button class="btn btn-gold btn-sm buy-now"><i class="fas fa-bolt"></i> Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 9. Pearl Drop Jhumkas -->
+                <div class="product-card" data-id="9" data-material="Gold Plated, Pearl" data-size="4.2 cm" data-style="Contemporary" data-price="109" data-name="Pearl Drop Jhumkas">
+                    <div class="card-badges">
+                        <span class="badge-tag tag-sale">SUPER VALUE</span>
+                        <button class="wishlist-icon" title="Save to Wishlist" aria-label="Save to Wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="product-thumb">
+                        <img src="image copy 9.png" alt="Pearl Drop Jhumkas" loading="lazy">
+                        <button class="quick-view-overlay-btn" title="Quick View"><i class="fas fa-eye"></i> Quick View</button>
+                    </div>
+                    <div class="card-info">
+                        <div class="rating-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span class="review-count">(188)</span>
+                        </div>
+                        <h3 class="product-title">Pearl Drop Jhumkas</h3>
+                        <p class="product-specs"><span>Gold Plated, Pearl</span> &bull; <span>4.2 cm</span></p>
+                        <div class="price-row">
+                            <div class="prices">
+                                <span class="original-price">₹189</span>
+                                <span class="price">₹109</span>
+                            </div>
+                        </div>
+                        <div class="card-actions-group">
+                            <button class="btn btn-outline-gold btn-sm add-to-cart"><i class="fas fa-cart-plus"></i> Cart</button>
+                            <button class="btn btn-gold btn-sm buy-now"><i class="fas fa-bolt"></i> Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10. Emerald Royal Danglers -->
+                <div class="product-card" data-id="10" data-material="Silver, Emerald" data-size="3.8 cm" data-style="Royal" data-price="209" data-name="Emerald Royal Danglers">
+                    <div class="card-badges">
+                        <span class="badge-tag tag-popular">ROYAL</span>
+                        <button class="wishlist-icon" title="Save to Wishlist" aria-label="Save to Wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="product-thumb">
+                        <img src="image copy 10.png" alt="Emerald Royal Danglers" loading="lazy">
+                        <button class="quick-view-overlay-btn" title="Quick View"><i class="fas fa-eye"></i> Quick View</button>
+                    </div>
+                    <div class="card-info">
+                        <div class="rating-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span class="review-count">(165)</span>
+                        </div>
+                        <h3 class="product-title">Emerald Royal Danglers</h3>
+                        <p class="product-specs"><span>Silver, Emerald</span> &bull; <span>3.8 cm</span></p>
+                        <div class="price-row">
+                            <div class="prices">
+                                <span class="original-price">₹349</span>
+                                <span class="price">₹209</span>
+                            </div>
+                        </div>
+                        <div class="card-actions-group">
+                            <button class="btn btn-outline-gold btn-sm add-to-cart"><i class="fas fa-cart-plus"></i> Cart</button>
+                            <button class="btn btn-gold btn-sm buy-now"><i class="fas fa-bolt"></i> Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 11. Diamond Touch Studs -->
+                <div class="product-card" data-id="11" data-material="Rose Gold, Diamond" data-size="2.8 cm" data-style="Modern" data-price="149" data-name="Diamond Touch Studs">
+                    <div class="card-badges">
+                        <button class="wishlist-icon" title="Save to Wishlist" aria-label="Save to Wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="product-thumb">
+                        <img src="image copy 11.png" alt="Diamond Touch Studs" loading="lazy">
+                        <button class="quick-view-overlay-btn" title="Quick View"><i class="fas fa-eye"></i> Quick View</button>
+                    </div>
+                    <div class="card-info">
+                        <div class="rating-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span class="review-count">(95)</span>
+                        </div>
+                        <h3 class="product-title">Diamond Touch Studs</h3>
+                        <p class="product-specs"><span>Rose Gold, Diamond</span> &bull; <span>2.8 cm</span></p>
+                        <div class="price-row">
+                            <div class="prices">
+                                <span class="original-price">₹249</span>
+                                <span class="price">₹149</span>
+                            </div>
+                        </div>
+                        <div class="card-actions-group">
+                            <button class="btn btn-outline-gold btn-sm add-to-cart"><i class="fas fa-cart-plus"></i> Cart</button>
+                            <button class="btn btn-gold btn-sm buy-now"><i class="fas fa-bolt"></i> Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 12. Ruby Traditional Jhumkas -->
+                <div class="product-card" data-id="12" data-material="Oxidized Silver, Ruby" data-size="4.5 cm" data-style="Traditional" data-price="199" data-name="Ruby Traditional Jhumkas">
+                    <div class="card-badges">
+                        <button class="wishlist-icon" title="Save to Wishlist" aria-label="Save to Wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="product-thumb">
+                        <img src="image copy 12.png" alt="Ruby Traditional Jhumkas" loading="lazy">
+                        <button class="quick-view-overlay-btn" title="Quick View"><i class="fas fa-eye"></i> Quick View</button>
+                    </div>
+                    <div class="card-info">
+                        <div class="rating-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            <span class="review-count">(118)</span>
+                        </div>
+                        <h3 class="product-title">Ruby Traditional Jhumkas</h3>
+                        <p class="product-specs"><span>Oxidized Silver, Ruby</span> &bull; <span>4.5 cm</span></p>
+                        <div class="price-row">
+                            <div class="prices">
+                                <span class="original-price">₹299</span>
+                                <span class="price">₹199</span>
+                            </div>
+                        </div>
+                        <div class="card-actions-group">
+                            <button class="btn btn-outline-gold btn-sm add-to-cart"><i class="fas fa-cart-plus"></i> Cart</button>
+                            <button class="btn btn-gold btn-sm buy-now"><i class="fas fa-bolt"></i> Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 13. Sapphire Elegance -->
+                <div class="product-card" data-id="13" data-material="Gold Plated, Sapphire" data-size="3.5 cm" data-style="Elegant" data-price="209" data-name="Sapphire Elegance">
+                    <div class="card-badges">
+                        <button class="wishlist-icon" title="Save to Wishlist" aria-label="Save to Wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="product-thumb">
+                        <img src="image copy 13.png" alt="Sapphire Elegance" loading="lazy">
+                        <button class="quick-view-overlay-btn" title="Quick View"><i class="fas fa-eye"></i> Quick View</button>
+                    </div>
+                    <div class="card-info">
+                        <div class="rating-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span class="review-count">(72)</span>
+                        </div>
+                        <h3 class="product-title">Sapphire Elegance</h3>
+                        <p class="product-specs"><span>Gold Plated, Sapphire</span> &bull; <span>3.5 cm</span></p>
+                        <div class="price-row">
+                            <div class="prices">
+                                <span class="original-price">₹329</span>
+                                <span class="price">₹209</span>
+                            </div>
+                        </div>
+                        <div class="card-actions-group">
+                            <button class="btn btn-outline-gold btn-sm add-to-cart"><i class="fas fa-cart-plus"></i> Cart</button>
+                            <button class="btn btn-gold btn-sm buy-now"><i class="fas fa-bolt"></i> Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 14. Modern Pearl Drops -->
+                <div class="product-card" data-id="14" data-material="Silver, Pearl" data-size="3.2 cm" data-style="Modern" data-price="209" data-name="Modern Pearl Drops">
+                    <div class="card-badges">
+                        <button class="wishlist-icon" title="Save to Wishlist" aria-label="Save to Wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="product-thumb">
+                        <img src="image copy 14.png" alt="Modern Pearl Drops" loading="lazy">
+                        <button class="quick-view-overlay-btn" title="Quick View"><i class="fas fa-eye"></i> Quick View</button>
+                    </div>
+                    <div class="card-info">
+                        <div class="rating-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span class="review-count">(153)</span>
+                        </div>
+                        <h3 class="product-title">Modern Pearl Drops</h3>
+                        <p class="product-specs"><span>Silver, Pearl</span> &bull; <span>3.2 cm</span></p>
+                        <div class="price-row">
+                            <div class="prices">
+                                <span class="original-price">₹319</span>
+                                <span class="price">₹209</span>
+                            </div>
+                        </div>
+                        <div class="card-actions-group">
+                            <button class="btn btn-outline-gold btn-sm add-to-cart"><i class="fas fa-cart-plus"></i> Cart</button>
+                            <button class="btn btn-gold btn-sm buy-now"><i class="fas fa-bolt"></i> Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 15. Crystal Cascade -->
+                <div class="product-card" data-id="15" data-material="Gold Plated, Crystal" data-size="4.0 cm" data-style="Contemporary" data-price="139" data-name="Crystal Cascade">
+                    <div class="card-badges">
+                        <button class="wishlist-icon" title="Save to Wishlist" aria-label="Save to Wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="product-thumb">
+                        <img src="image copy 15.png" alt="Crystal Cascade" loading="lazy">
+                        <button class="quick-view-overlay-btn" title="Quick View"><i class="fas fa-eye"></i> Quick View</button>
+                    </div>
+                    <div class="card-info">
+                        <div class="rating-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span class="review-count">(89)</span>
+                        </div>
+                        <h3 class="product-title">Crystal Cascade</h3>
+                        <p class="product-specs"><span>Gold Plated, Crystal</span> &bull; <span>4.0 cm</span></p>
+                        <div class="price-row">
+                            <div class="prices">
+                                <span class="original-price">₹219</span>
+                                <span class="price">₹139</span>
+                            </div>
+                        </div>
+                        <div class="card-actions-group">
+                            <button class="btn btn-outline-gold btn-sm add-to-cart"><i class="fas fa-cart-plus"></i> Cart</button>
+                            <button class="btn btn-gold btn-sm buy-now"><i class="fas fa-bolt"></i> Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 16. Pearl Romance -->
+                <div class="product-card" data-id="16" data-material="Rose Gold, Pearl" data-size="3.5 cm" data-style="Elegant" data-price="129" data-name="Pearl Romance">
+                    <div class="card-badges">
+                        <button class="wishlist-icon" title="Save to Wishlist" aria-label="Save to Wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="product-thumb">
+                        <img src="image copy 16.png" alt="Pearl Romance" loading="lazy">
+                        <button class="quick-view-overlay-btn" title="Quick View"><i class="fas fa-eye"></i> Quick View</button>
+                    </div>
+                    <div class="card-info">
+                        <div class="rating-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            <span class="review-count">(64)</span>
+                        </div>
+                        <h3 class="product-title">Pearl Romance</h3>
+                        <p class="product-specs"><span>Rose Gold, Pearl</span> &bull; <span>3.5 cm</span></p>
+                        <div class="price-row">
+                            <div class="prices">
+                                <span class="original-price">₹199</span>
+                                <span class="price">₹129</span>
+                            </div>
+                        </div>
+                        <div class="card-actions-group">
+                            <button class="btn btn-outline-gold btn-sm add-to-cart"><i class="fas fa-cart-plus"></i> Cart</button>
+                            <button class="btn btn-gold btn-sm buy-now"><i class="fas fa-bolt"></i> Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 17. Emerald Queen -->
+                <div class="product-card" data-id="17" data-material="Silver, Emerald" data-size="4.2 cm" data-style="Royal" data-price="199" data-name="Emerald Queen">
+                    <div class="card-badges">
+                        <span class="badge-tag tag-popular">ROYAL</span>
+                        <button class="wishlist-icon" title="Save to Wishlist" aria-label="Save to Wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="product-thumb">
+                        <img src="image copy 17.png" alt="Emerald Queen" loading="lazy">
+                        <button class="quick-view-overlay-btn" title="Quick View"><i class="fas fa-eye"></i> Quick View</button>
+                    </div>
+                    <div class="card-info">
+                        <div class="rating-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span class="review-count">(124)</span>
+                        </div>
+                        <h3 class="product-title">Emerald Queen</h3>
+                        <p class="product-specs"><span>Silver, Emerald</span> &bull; <span>4.2 cm</span></p>
+                        <div class="price-row">
+                            <div class="prices">
+                                <span class="original-price">₹329</span>
+                                <span class="price">₹199</span>
+                            </div>
+                        </div>
+                        <div class="card-actions-group">
+                            <button class="btn btn-outline-gold btn-sm add-to-cart"><i class="fas fa-cart-plus"></i> Cart</button>
+                            <button class="btn btn-gold btn-sm buy-now"><i class="fas fa-bolt"></i> Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 18. Ruby Tradition -->
+                <div class="product-card" data-id="18" data-material="Gold Plated, Ruby" data-size="3.8 cm" data-style="Traditional" data-price="129" data-name="Ruby Tradition">
+                    <div class="card-badges">
+                        <button class="wishlist-icon" title="Save to Wishlist" aria-label="Save to Wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="product-thumb">
+                        <img src="image copy 18.png" alt="Ruby Tradition" loading="lazy">
+                        <button class="quick-view-overlay-btn" title="Quick View"><i class="fas fa-eye"></i> Quick View</button>
+                    </div>
+                    <div class="card-info">
+                        <div class="rating-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span class="review-count">(78)</span>
+                        </div>
+                        <h3 class="product-title">Ruby Tradition</h3>
+                        <p class="product-specs"><span>Gold Plated, Ruby</span> &bull; <span>3.8 cm</span></p>
+                        <div class="price-row">
+                            <div class="prices">
+                                <span class="original-price">₹199</span>
+                                <span class="price">₹129</span>
+                            </div>
+                        </div>
+                        <div class="card-actions-group">
+                            <button class="btn btn-outline-gold btn-sm add-to-cart"><i class="fas fa-cart-plus"></i> Cart</button>
+                            <button class="btn btn-gold btn-sm buy-now"><i class="fas fa-bolt"></i> Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 19. Vintage Pearl Glory -->
+                <div class="product-card" data-id="19" data-material="Oxidized Silver, Pearl" data-size="4.5 cm" data-style="Vintage" data-price="299" data-name="Vintage Pearl Glory">
+                    <div class="card-badges">
+                        <button class="wishlist-icon" title="Save to Wishlist" aria-label="Save to Wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="product-thumb">
+                        <img src="image copy 19.png" alt="Vintage Pearl Glory" loading="lazy">
+                        <button class="quick-view-overlay-btn" title="Quick View"><i class="fas fa-eye"></i> Quick View</button>
+                    </div>
+                    <div class="card-info">
+                        <div class="rating-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            <span class="review-count">(91)</span>
+                        </div>
+                        <h3 class="product-title">Vintage Pearl Glory</h3>
+                        <p class="product-specs"><span>Oxidized Silver, Pearl</span> &bull; <span>4.5 cm</span></p>
+                        <div class="price-row">
+                            <div class="prices">
+                                <span class="original-price">₹429</span>
+                                <span class="price">₹299</span>
+                            </div>
+                        </div>
+                        <div class="card-actions-group">
+                            <button class="btn btn-outline-gold btn-sm add-to-cart"><i class="fas fa-cart-plus"></i> Cart</button>
+                            <button class="btn btn-gold btn-sm buy-now"><i class="fas fa-bolt"></i> Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 20. Sapphire Dreams -->
+                <div class="product-card" data-id="20" data-material="Gold Plated, Sapphire" data-size="3.6 cm" data-style="Modern" data-price="299" data-name="Sapphire Dreams">
+                    <div class="card-badges">
+                        <button class="wishlist-icon" title="Save to Wishlist" aria-label="Save to Wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="product-thumb">
+                        <img src="image copy 20.png" alt="Sapphire Dreams" loading="lazy">
+                        <button class="quick-view-overlay-btn" title="Quick View"><i class="fas fa-eye"></i> Quick View</button>
+                    </div>
+                    <div class="card-info">
+                        <div class="rating-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span class="review-count">(107)</span>
+                        </div>
+                        <h3 class="product-title">Sapphire Dreams</h3>
+                        <p class="product-specs"><span>Gold Plated, Sapphire</span> &bull; <span>3.6 cm</span></p>
+                        <div class="price-row">
+                            <div class="prices">
+                                <span class="original-price">₹449</span>
+                                <span class="price">₹299</span>
+                            </div>
+                        </div>
+                        <div class="card-actions-group">
+                            <button class="btn btn-outline-gold btn-sm add-to-cart"><i class="fas fa-cart-plus"></i> Cart</button>
+                            <button class="btn btn-gold btn-sm buy-now"><i class="fas fa-bolt"></i> Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 21. Diamond Dazzle -->
+                <div class="product-card" data-id="21" data-material="Silver, Diamond" data-size="3.0 cm" data-style="Contemporary" data-price="199" data-name="Diamond Dazzle">
+                    <div class="card-badges">
+                        <button class="wishlist-icon" title="Save to Wishlist" aria-label="Save to Wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="product-thumb">
+                        <img src="image copy 21.png" alt="Diamond Dazzle" loading="lazy">
+                        <button class="quick-view-overlay-btn" title="Quick View"><i class="fas fa-eye"></i> Quick View</button>
+                    </div>
+                    <div class="card-info">
+                        <div class="rating-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span class="review-count">(155)</span>
+                        </div>
+                        <h3 class="product-title">Diamond Dazzle</h3>
+                        <p class="product-specs"><span>Silver, Diamond</span> &bull; <span>3.0 cm</span></p>
+                        <div class="price-row">
+                            <div class="prices">
+                                <span class="original-price">₹299</span>
+                                <span class="price">₹199</span>
+                            </div>
+                        </div>
+                        <div class="card-actions-group">
+                            <button class="btn btn-outline-gold btn-sm add-to-cart"><i class="fas fa-cart-plus"></i> Cart</button>
+                            <button class="btn btn-gold btn-sm buy-now"><i class="fas fa-bolt"></i> Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 22. Pearl Heritage -->
+                <div class="product-card" data-id="22" data-material="Gold Plated, Pearl" data-size="4.2 cm" data-style="Traditional" data-price="299" data-name="Pearl Heritage">
+                    <div class="card-badges">
+                        <button class="wishlist-icon" title="Save to Wishlist" aria-label="Save to Wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="product-thumb">
+                        <img src="image copy 22.png" alt="Pearl Heritage" loading="lazy">
+                        <button class="quick-view-overlay-btn" title="Quick View"><i class="fas fa-eye"></i> Quick View</button>
+                    </div>
+                    <div class="card-info">
+                        <div class="rating-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            <span class="review-count">(82)</span>
+                        </div>
+                        <h3 class="product-title">Pearl Heritage</h3>
+                        <p class="product-specs"><span>Gold Plated, Pearl</span> &bull; <span>4.2 cm</span></p>
+                        <div class="price-row">
+                            <div class="prices">
+                                <span class="original-price">₹429</span>
+                                <span class="price">₹299</span>
+                            </div>
+                        </div>
+                        <div class="card-actions-group">
+                            <button class="btn btn-outline-gold btn-sm add-to-cart"><i class="fas fa-cart-plus"></i> Cart</button>
+                            <button class="btn btn-gold btn-sm buy-now"><i class="fas fa-bolt"></i> Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 23. Crystal Bloom -->
+                <div class="product-card" data-id="23" data-material="Rose Gold, Crystal" data-size="3.8 cm" data-style="Modern" data-price="299" data-name="Crystal Bloom">
+                    <div class="card-badges">
+                        <button class="wishlist-icon" title="Save to Wishlist" aria-label="Save to Wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="product-thumb">
+                        <img src="image copy 23.png" alt="Crystal Bloom" loading="lazy">
+                        <button class="quick-view-overlay-btn" title="Quick View"><i class="fas fa-eye"></i> Quick View</button>
+                    </div>
+                    <div class="card-info">
+                        <div class="rating-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span class="review-count">(119)</span>
+                        </div>
+                        <h3 class="product-title">Crystal Bloom</h3>
+                        <p class="product-specs"><span>Rose Gold, Crystal</span> &bull; <span>3.8 cm</span></p>
+                        <div class="price-row">
+                            <div class="prices">
+                                <span class="original-price">₹399</span>
+                                <span class="price">₹299</span>
+                            </div>
+                        </div>
+                        <div class="card-actions-group">
+                            <button class="btn btn-outline-gold btn-sm add-to-cart"><i class="fas fa-cart-plus"></i> Cart</button>
+                            <button class="btn btn-gold btn-sm buy-now"><i class="fas fa-bolt"></i> Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide-Out Shopping Bag Drawer -->
+    <div id="cartDrawer" class="cart-drawer">
+        <div class="cart-drawer-header">
+            <h3><i class="fas fa-shopping-bag text-gold"></i> Your Shopping Bag (<span id="drawerCartCount">0</span>)</h3>
+            <button id="closeCartDrawer" class="close-drawer-btn">&times;</button>
+        </div>
+        <div class="cart-drawer-body">
+            <!-- Free Shipping Progress -->
+            <div class="free-shipping-bar">
+                <i class="fas fa-truck text-gold"></i>
+                <span>You unlocked <strong>FREE Express Pan-India Delivery!</strong></span>
+            </div>
+
+            <!-- Dynamic Cart Items List -->
+            <div class="cart-items-container" id="cartItemsList">
+                <div class="empty-cart-state">
+                    <i class="fas fa-shopping-bag empty-bag-icon"></i>
+                    <p>Your shopping bag is empty.</p>
+                    <a href="#products" class="btn btn-gold btn-sm" id="shopNowCartBtn">Explore Earrings</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cart-drawer-footer">
+            <div class="cart-summary-line">
+                <span>Subtotal:</span>
+                <strong id="cartSubtotal">₹0</strong>
+            </div>
+            <div class="cart-summary-line discount-line">
+                <span>Festive Code <strong class="code-text">ROYAL20</strong>:</span>
+                <span class="text-emerald">-₹0</span>
+            </div>
+            <div class="cart-summary-line">
+                <span>Estimated Delivery:</span>
+                <span class="text-emerald">FREE</span>
+            </div>
+            <div class="cart-total-line">
+                <span>Total Payable:</span>
+                <strong id="cartGrandTotal">₹0</strong>
+            </div>
+            <button id="drawerCheckoutBtn" class="btn btn-gold btn-block btn-glow">
+                <i class="fas fa-lock"></i> Proceed to Pay via UPI
+            </button>
+        </div>
+    </div>
+    <div id="cartBackdrop" class="drawer-backdrop"></div>
+
+    <!-- Product Quick View Modal -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content luxury-modal-content">
+            <button class="close-modal-btn" id="closeProductModal">&times;</button>
+            <div class="product-modal-grid">
+                <div class="modal-img-container">
+                    <img src="" alt="Product Large Image" id="modal-product-image">
+                </div>
+                <div class="modal-info-container">
+                    <span class="modal-category-tag" id="modal-style-tag">HANDCRAFTED COUTURE</span>
+                    <h2 id="modal-product-name" class="modal-title"></h2>
+                    <div class="modal-pricing-box">
+                        <span class="modal-price" id="modal-product-price"></span>
+                        <span class="inclusive-taxes">Inclusive of all luxury taxes</span>
+                    </div>
+
+                    <div class="modal-specs-list">
+                        <div class="spec-row">
+                            <span class="spec-label"><i class="fas fa-gem text-gold"></i> Material:</span>
+                            <strong id="modal-material" class="spec-val"></strong>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label"><i class="fas fa-ruler-combined text-gold"></i> Dimensions:</span>
+                            <strong id="modal-size" class="spec-val"></strong>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label"><i class="fas fa-palette text-gold"></i> Aesthetic:</span>
+                            <strong id="modal-style" class="spec-val"></strong>
+                        </div>
+                    </div>
+
+                    <div class="modal-actions">
+                        <div class="qty-stepper">
+                            <button type="button" class="qty-btn" id="modalQtyMinus">-</button>
+                            <input type="number" id="modalQtyInput" value="1" min="1" max="10" readonly>
+                            <button type="button" class="qty-btn" id="modalQtyPlus">+</button>
+                        </div>
+                        <button id="modalAddToCartBtn" class="btn btn-outline-gold">
+                            <i class="fas fa-cart-plus"></i> Add to Bag
+                        </button>
+                        <button id="modalBuyNowBtn" class="btn btn-gold btn-glow">
+                            <i class="fas fa-bolt"></i> Instant UPI Buy
+                        </button>
+                    </div>
+
+                    <div class="modal-perks">
+                        <span><i class="fas fa-shield-alt text-gold"></i> Hypoallergenic</span>
+                        <span><i class="fas fa-box text-gold"></i> Luxury Velvet Box</span>
+                        <span><i class="fas fa-undo text-gold"></i> 7-Day Replacement</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <section id="products" class="products">
-        <h2>Our Collection</h2>
-        <div class="search-container">
-            <div class="search-box">
-                <input type="text" id="search-input" placeholder="Search earrings...">
-                <button class="search-button">
-                    <i class="fas fa-search"></i>
+    <!-- Unified UPI & Checkout Payment Modal -->
+    <div id="payment-modal" class="modal">
+        <div class="modal-content payment-modal-content">
+            <button class="close-modal-btn" id="closePaymentModal">&times;</button>
+            <div class="payment-modal-header">
+                <h3><i class="fas fa-shield-check text-gold"></i> Complete Secure Payment</h3>
+                <p>Instant UPI QR Code &bull; Google Pay &bull; PhonePe &bull; Direct WhatsApp</p>
+            </div>
+
+            <div class="payment-modal-body">
+                <!-- Order Product Summary Card -->
+                <div class="payment-summary-card">
+                    <img id="paymentProductImage" src="image.png" alt="Earring Thumbnail" class="pay-thumb">
+                    <div class="pay-info">
+                        <h4 id="paymentProductName">Crystal Drop Earrings</h4>
+                        <div class="pay-amount-box">
+                            <span>Amount to Pay:</span>
+                            <strong id="paymentProductPrice" class="pay-total-val">₹299</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- UPI QR Code Section -->
+                <div class="qr-payment-showcase">
+                    <div class="qr-frame">
+                        <img id="merchant-qr" src="QR code.jpg" alt="Official Merchant UPI QR Code">
+                        <div class="scan-pill"><i class="fas fa-qrcode"></i> Scan with any UPI App</div>
+                    </div>
+
+                    <div class="upi-id-box">
+                        <span class="upi-label">Verified UPI ID:</span>
+                        <div class="upi-copy-row">
+                            <code id="merchantUpiCode">ky187768@okicici</code>
+                            <button id="copyUpiBtn" class="btn-copy" title="Copy UPI ID">
+                                <i class="fas fa-copy"></i> Copy
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Direct UPI App Launcher -->
+                <div class="upi-apps-row">
+                    <button id="openGPayAppBtn" class="btn btn-upi-app gpay-btn">
+                        <i class="fab fa-google-pay"></i> Pay with Google Pay
+                    </button>
+                    <button id="whatsappOrderBtn" class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Confirm on WhatsApp
+                    </button>
+                </div>
+
+                <!-- Customer Details for Shipping -->
+                <div class="shipping-details-accordion">
+                    <button type="button" class="shipping-toggle-btn" id="shippingToggleBtn">
+                        <span><i class="fas fa-truck"></i> Enter Shipping Address (Optional for Receipt)</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="shipping-form-fields" id="shippingFormFields">
+                        <input type="text" id="custName" placeholder="Full Name" class="pay-input">
+                        <input type="tel" id="custPhone" placeholder="WhatsApp Number" class="pay-input">
+                        <textarea id="custAddress" placeholder="Delivery Address with Pincode" rows="2" class="pay-input"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="payment-modal-footer">
+                <button id="confirmPaymentBtn" class="btn btn-gold btn-block btn-glow">
+                    <i class="fas fa-check-circle"></i> I Have Paid / Confirm Order
                 </button>
             </div>
         </div>
-        <div class="product-grid">
-            <div class="product-card" data-material="Crystal, Silver" data-size="4.5 cm" data-style="Modern">
-                <div class="wishlist-icon">
-                    <i class="far fa-heart"></i>
-                </div>
-                <img src="image.png" alt="Earring 1">
-                <h3>Crystal Drop Earrings</h3>
-                <p class="price">₹299</p>
-                <button class="buy-now">Buy Now</button>
-                <!-- <button class="add-to-cart">Add to Cart</button> -->
-            </div>
-            <div class="product-card" data-material="Gold Plated" data-size="3.5 cm" data-style="Classic">
-                <div class="wishlist-icon">
-                    <i class="far fa-heart"></i>
-                </div>  
-                <img src="image copy 2.png" alt="Earring 2">
-                <h3>Gold Hoops</h3>
-                <p class="price">₹299</p>
-                <button class="buy-now">Buy Now</button>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product-card" data-material="Pearl, Sterling Silver" data-size="1 cm" data-style="Elegant">
-                <div class="wishlist-icon">
-                    <i class="far fa-heart"></i>
-                </div>
-                <img src="image copy 3.png" alt="Earring 3">
-                <h3>Pearl Studs</h3>
-                <p class="price">₹239</p>
-                <button class="buy-now">Buy Now</button>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product-card" data-material="Oxidized Silver" data-size="5 cm" data-style="Traditional">
-                <div class="wishlist-icon">
-                    <i class="far fa-heart"></i>
-                </div>
-                <img src="image copy 8.png" alt="Earring 4">
-                <h3>Antique Danglers</h3>
-                <p class="price">₹399</p>
-                <button class="buy-now">Buy Now</button>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product-card" data-material="Gold Plated, Crystal" data-size="3.8 cm" data-style="Contemporary">
-                <div class="wishlist-icon">
-                    <i class="far fa-heart"></i>
-                </div>
-                <img src="image copy 4.png" alt="Earring 5">
-                <h3>Crystal Earrings</h3>
-                <p class="price">₹199</p>
-                <button class="buy-now">Buy Now</button>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product-card" data-material="Rose Gold" data-size="2.5 cm" data-style="Modern">
-                <div class="wishlist-icon">
-                    <i class="far fa-heart"></i>
-                </div>
-                <img src="image copy 5.png" alt="Earring 6">
-                <h3>Rose Gold Studs</h3>
-                <p class="price">₹299</p>
-                <button class="buy-now">Buy Now</button>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product-card" data-material="Sterling Silver, Zircon" data-size="4 cm" data-style="Elegant">
-                <div class="wishlist-icon">
-                    <i class="far fa-heart"></i>
-                </div>
-                <img src="image copy 6.png" alt="Earring 7">
-                <h3>Zircon Drop Earrings</h3>
-                <p class="price">₹299</p>
-                <button class="buy-now">Buy Now</button>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product-card" data-material="Kundan, Gold Plated" data-size="5.5 cm" data-style="Traditional">
-                <div class="wishlist-icon">
-                    <i class="far fa-heart"></i>
-                </div>
-                <img src="image copy 7.png" alt="Earring 8">
-                <h3>Kundan Jhumkas</h3>
-                <p class="price">₹119</p>
-                <button class="buy-now">Buy Now</button>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product-card" data-material="Gold Plated, Pearl" data-size="4.2 cm" data-style="Contemporary">
-                <div class="wishlist-icon">
-                    <i class="far fa-heart"></i>
-                </div>
-                <img src="image copy 9.png" alt="Earring 9">
-                <h3>Pearl Drop Jhumkas</h3>
-                <p class="price">₹109</p>
-                <button class="buy-now">Buy Now</button>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product-card" data-material="Silver, Emerald" data-size="3.8 cm" data-style="Royal">
-                <div class="wishlist-icon">
-                    <i class="far fa-heart"></i>
-                </div>
-                <img src="image copy 10.png" alt="Earring 10">
-                <h3>Emerald Royal Danglers</h3>
-                <p class="price">₹209</p>
-                <button class="buy-now">Buy Now</button>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product-card" data-material="Rose Gold, Diamond" data-size="2.8 cm" data-style="Modern">
-                <div class="wishlist-icon">
-                    <i class="far fa-heart"></i>
-                </div>
-                <img src="image copy 11.png" alt="Earring 11">
-                <h3>Diamond Touch Studs</h3>
-                <p class="price">₹149</p>
-                <button class="buy-now">Buy Now</button>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product-card" data-material="Oxidized Silver, Ruby" data-size="4.5 cm" data-style="Traditional">
-                <div class="wishlist-icon">
-                    <i class="far fa-heart"></i>
-                </div>
-                <img src="image copy 12.png" alt="Earring 12">
-                <h3>Ruby Traditional Jhumkas</h3>
-                <p class="price">₹199</p>
-                <button class="buy-now">Buy Now</button>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product-card" data-material="Gold Plated, Sapphire" data-size="3.5 cm" data-style="Elegant">
-                <div class="wishlist-icon">
-                    <i class="far fa-heart"></i>
-                </div>
-                <img src="image copy 13.png" alt="Earring 13">
-                <h3>Sapphire Elegance</h3>
-                <p class="price">₹209</p>
-                <button class="buy-now">Buy Now</button>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product-card" data-material="Silver, Pearl" data-size="3.2 cm" data-style="Modern">
-                <div class="wishlist-icon">
-                    <i class="far fa-heart"></i>
-                </div>
-                <img src="image copy 14.png" alt="Earring 14">
-                <h3>Modern Pearl Drops</h3>
-                <p class="price">₹209</p>
-                <button class="buy-now">Buy Now</button>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product-card" data-material="Gold Plated, Crystal" data-size="4.0 cm" data-style="Contemporary">
-                <div class="wishlist-icon">
-                    <i class="far fa-heart"></i>
-                </div>
-                <img src="image copy 15.png" alt="Earring 15">
-                <h3>Crystal Cascade</h3>
-                <p class="price">₹139</p>
-                <button class="buy-now">Buy Now</button>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product-card" data-material="Rose Gold, Pearl" data-size="3.5 cm" data-style="Elegant">
-                <div class="wishlist-icon">
-                    <i class="far fa-heart"></i>
-                </div>
-                <img src="image copy 16.png" alt="Earring 16">
-                <h3>Pearl Romance</h3>
-                <p class="price">₹129</p>
-                <button class="buy-now">Buy Now</button>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product-card" data-material="Silver, Emerald" data-size="4.2 cm" data-style="Royal">
-                <div class="wishlist-icon">
-                    <i class="far fa-heart"></i>
-                </div>
-                <img src="image copy 17.png" alt="Earring 17">
-                <h3>Emerald Queen</h3>
-                <p class="price">₹199</p>
-                <button class="buy-now">Buy Now</button>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product-card" data-material="Gold Plated, Ruby" data-size="3.8 cm" data-style="Traditional">
-                <div class="wishlist-icon">
-                    <i class="far fa-heart"></i>
-                </div>
-                <img src="image copy 18.png" alt="Earring 18">
-                <h3>Ruby Tradition</h3>
-                <p class="price">₹129</p>
-                <button class="buy-now">Buy Now</button>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product-card" data-material="Oxidized Silver, Pearl" data-size="4.5 cm" data-style="Vintage">
-                <div class="wishlist-icon">
-                    <i class="far fa-heart"></i>
-                </div>
-                <img src="image copy 19.png" alt="Earring 19">
-                <h3>Vintage Pearl Glory</h3>
-                <p class="price">₹299</p>
-                <button class="buy-now">Buy Now</button>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product-card" data-material="Gold Plated, Sapphire" data-size="3.6 cm" data-style="Modern">
-                <div class="wishlist-icon">
-                    <i class="far fa-heart"></i>
-                </div>
-                <img src="image copy 20.png" alt="Earring 20">
-                <h3>Sapphire Dreams</h3>
-                <p class="price">₹299</p>
-                <button class="buy-now">Buy Now</button>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product-card" data-material="Silver, Diamond" data-size="3.0 cm" data-style="Contemporary">
-                <div class="wishlist-icon">
-                    <i class="far fa-heart"></i>
-                </div>
-                <img src="image copy 21.png" alt="Earring 21">
-                <h3>Diamond Dazzle</h3>
-                <p class="price">₹199</p>
-                <button class="buy-now">Buy Now</button>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product-card" data-material="Gold Plated, Pearl" data-size="4.2 cm" data-style="Traditional">
-                <div class="wishlist-icon">
-                    <i class="far fa-heart"></i>
-                </div>
-                <img src="image copy 22.png" alt="Earring 22">
-                <h3>Pearl Heritage</h3>
-                <p class="price">₹299</p>
-                <button class="buy-now">Buy Now</button>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product-card" data-material="Rose Gold, Crystal" data-size="3.8 cm" data-style="Modern">
-                <div class="wishlist-icon">
-                    <i class="far fa-heart"></i>
-                </div>
-                <img src="image copy 23.png" alt="Earring 23">
-                <h3>Crystal Bloom</h3>
-                <p class="price">₹299</p>
-                <button class="buy-now">Buy Now</button>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="about">
-        <h2>About Us</h2>
-        <p>We specialize in creating beautiful, handcrafted earrings that make you feel elegant and confident. Each piece is made with attention to detail and quality materials.</p>
-    </section>
-
-    <section id="contact" class="contact">
-        <h2>Contact Us</h2>
-        <form class="contact-form">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
-
-    <footer>
-        <div class="footer-content">
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-            </div>
-            <p>&copy; 2025 Elegant Earrings. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <!-- Shopping Cart Modal -->
-    <div id="cart-modal" class="modal">
-        <div class="modal-content cart-modal-content">
-            <span class="close-modal" id="close-cart">&times;</span>
-            <h2>Shopping Cart</h2>
-            <div class="cart-items">
-                <!-- Cart items will be added here dynamically -->
-            </div>
-            <div class="cart-summary">
-                <div class="cart-total">
-                    <span>Total:</span>
-                    <span class="total-amount">₹0</span>
-                </div>
-                <button class="checkout-button" disabled>Proceed to Checkout</button>
-            </div>
-        </div>
     </div>
 
-    <!-- Product Details Modal -->
-    <div id="product-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div class="product-details">
-                <div class="product-image-large">
-                    <img src="" alt="Product Image" id="modal-product-image">
+    <!-- Craftsmanship & Purity Bento Section -->
+    <section id="craftsmanship" class="section craftsmanship-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">THE AURA JEWELS STANDARD</span>
+                <h2 class="section-title">Royal Craftsmanship &amp; <span class="gold-shimmer-text">Skin-Safe Purity</span></h2>
+                <p class="section-caption">Each masterpiece is crafted using heritage techniques blended with modern anti-tarnish micro-coating.</p>
+            </div>
+
+            <div class="craftsmanship-grid">
+                <!-- 01: Hallmarked -->
+                <div class="craft-card">
+                    <div class="craft-icon"><i class="fas fa-award"></i></div>
+                    <h3>Hallmarked 925 Silver</h3>
+                    <p>Authentic purity tested for sterling silver and 18K/24K gold vermeil plating that retains its radiant glow for years.</p>
                 </div>
-                <div class="product-info">
-                    <h2 id="modal-product-name"></h2>
-                    <p class="price" id="modal-product-price"></p>
-                    <div class="product-description">
-                        <h3>Product Details</h3>
-                        <ul>
-                            <li>Material: <span id="modal-material"></span></li>
-                            <li>Size: <span id="modal-size"></span></li>
-                            <li>Style: <span id="modal-style"></span></li>
-                        </ul>
+                <!-- 02: Hypoallergenic -->
+                <div class="craft-card">
+                    <div class="craft-icon"><i class="fas fa-feather-alt"></i></div>
+                    <h3>100% Skin Safe</h3>
+                    <p>Engineered without nickel, cadmium, or lead. Suitable for the most sensitive earlobes with zero irritation or itching.</p>
+                </div>
+                <!-- 03: Velvet Box -->
+                <div class="craft-card">
+                    <div class="craft-icon"><i class="fas fa-gift"></i></div>
+                    <h3>Signature Gift Box</h3>
+                    <p>Delivered in an opulent cushioned velvet keepsake box with polishing suede cloth and certificate of artisan authenticity.</p>
+                </div>
+                <!-- 04: Anti-Tarnish -->
+                <div class="craft-card">
+                    <div class="craft-icon"><i class="fas fa-shield-virus"></i></div>
+                    <h3>Anti-Tarnish Seal</h3>
+                    <p>Special transparent ceramic protective shield that prevents oxidation, sweat fading, and atmospheric discoloration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="reviews" class="section reviews-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">WORD OF PATRONS</span>
+                <h2 class="section-title">Adorned by <span class="gold-shimmer-text">15,000+ Queens</span></h2>
+                <p class="section-caption">Read why brides, fashion designers, and corporate leaders choose Aura Jewels for their milestones.</p>
+            </div>
+
+            <div class="reviews-grid">
+                <div class="review-box">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <form class="order-form">
+                    <p class="review-text">"I ordered the Kundan Jhumkas for my brother's wedding and everyone thought they were real heirloom polki! Extremely lightweight and the velvet box was so royal."</p>
+                    <div class="reviewer-meta">
+                        <div class="reviewer-avatar">A</div>
+                        <div class="reviewer-info">
+                            <strong>Ananya Sengupta</strong>
+                            <span>Kolkata &bull; Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-box highlight-review">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"The Austrian Crystal Drops have the most dazzling fire and sparkle under warm lights! Seamless UPI payment and express delivery within 48 hours to Delhi."</p>
+                    <div class="reviewer-meta">
+                        <div class="reviewer-avatar">M</div>
+                        <div class="reviewer-info">
+                            <strong>Meera Kashyap</strong>
+                            <span>New Delhi &bull; Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-box">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"I have extremely sensitive ears that usually swell with artificial jewellery. Aura Jewels' pearl studs are truly hypoallergenic! Worn them daily for 3 months with zero issues."</p>
+                    <div class="reviewer-meta">
+                        <div class="reviewer-avatar">S</div>
+                        <div class="reviewer-info">
+                            <strong>Shreya Nambiar</strong>
+                            <span>Bengaluru &bull; Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jewellery Care & FAQ Accordion -->
+    <section class="section faq-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">QUICK ANSWERS</span>
+                <h2 class="section-title">Jewellery Care &amp; <span class="gold-shimmer-text">Patron FAQ</span></h2>
+                <p class="section-caption">Everything you need to know about deliveries, returns, and preserving your jewellery's luster.</p>
+            </div>
+
+            <div class="faq-accordion-wrapper">
+                <div class="faq-item active">
+                    <button class="faq-question">
+                        <span>How should I care for my earrings to maintain long-lasting shine?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Store each pair individually in our signature velvet box or an airtight zip-pouch away from moisture. Avoid direct spray of perfumes, hairsprays, or submerging in chlorinated water. Gently wipe with the complimentary microfiber suede cloth after each wear.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What payment modes are accepted?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We accept all UPI applications (Google Pay, PhonePe, Paytm, BHIM), direct QR scan, Credit/Debit cards, and Cash on Delivery (COD) across 26,000+ Indian postal pincodes.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What is the shipping timeline?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Orders are dispatched within 24 hours of placement. Metro cities typically receive deliveries within 2 to 3 business days; all other regions receive orders within 3 to 5 business days with live SMS tracking.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Can I place my order directly through WhatsApp?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely! Simply click on the "Confirm on WhatsApp" button in the payment modal or the floating WhatsApp icon to chat directly with our concierge team at <strong>+91 8576943716</strong>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Concierge Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="contact-card-wrapper">
+                <div class="contact-info-col">
+                    <span class="section-subtitle">ATELIER CONCIERGE</span>
+                    <h2>Need Personalized Styling or Custom Gifting?</h2>
+                    <p>Our jewellery consultants are available around the clock to guide your bridal selections, festive hampers, and sizing inquiries.</p>
+                    
+                    <div class="concierge-links">
+                        <div class="c-item">
+                            <i class="fas fa-phone-alt text-gold"></i>
+                            <div>
+                                <h5>Concierge Desk</h5>
+                                <p>+91 8576943716 (24/7 Hotline)</p>
+                            </div>
+                        </div>
+                        <div class="c-item">
+                            <i class="fab fa-whatsapp text-gold"></i>
+                            <div>
+                                <h5>WhatsApp Priority Support</h5>
+                                <p><a href="https://wa.me/918576943716" target="_blank" class="gold-link">+91 8576943716 (Click to Chat)</a></p>
+                            </div>
+                        </div>
+                        <div class="c-item">
+                            <i class="fas fa-envelope text-gold"></i>
+                            <div>
+                                <h5>Email Atelier</h5>
+                                <p>care@aurajewels.in</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-col">
+                    <form id="contactForm" class="luxury-form">
                         <div class="form-group">
-                            <label for="quantity">Quantity:</label>
-                            <input type="number" id="quantity" min="1" value="1" required>
+                            <label for="contactName">Your Name</label>
+                            <input type="text" id="contactName" placeholder="e.g. Priyanshu Maurya" required>
                         </div>
                         <div class="form-group">
-                            <label for="customer-name">Your Name:</label>
-                            <input type="text" id="customer-name" required>
+                            <label for="contactEmail">Email Address</label>
+                            <input type="email" id="contactEmail" placeholder="e.g. name@example.com" required>
                         </div>
                         <div class="form-group">
-                            <label for="customer-email">Email:</label>
-                            <input type="email" id="customer-email" required>
+                            <label for="contactMessage">How Can We Assist Your Styling?</label>
+                            <textarea id="contactMessage" rows="3" placeholder="Tell us your styling question or gift request..." required></textarea>
                         </div>
-                        <div class="form-group">
-                            <label for="customer-phone">Phone:</label>
-                            <input type="tel" id="customer-phone" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="delivery-address">Delivery Address:</label>
-                            <textarea id="delivery-address" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="payment-method">Payment Method:</label>
-                            <select id="payment-method" required>
-                                <option value="">Select Payment Method</option>
-                                <option value="cod">Cash on Delivery</option>
-                                <option value="upi">UPI</option>
-                                <option value="card">Credit/Debit Card</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="order-button">Place Order</button>
+                        <button type="submit" class="btn btn-gold btn-block btn-glow">
+                            <i class="fas fa-paper-plane"></i> Send Concierge Message
+                        </button>
                     </form>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Payment Modal -->
-    <div id="payment-modal" class="modal">
-        <div class="modal-content payment-modal">
-            <span class="close-modal" id="closePaymentModal">&times;</span>
-            <div class="payment-header">
-                <h2>Select Payment Method</h2>
-                <div class="order-summary">
-                    <div class="product-summary">
-                        <img id="paymentProductImage" class="payment-product-image" src="" alt="Product">
-                        <div class="product-details">
-                            <h3 id="paymentProductName"></h3>
-                            <p id="paymentProductPrice"></p>
+    <!-- Floating WhatsApp Support Button -->
+    <a href="https://wa.me/918576943716?text=Hi%20Aura%20Jewels,%20I%20am%20interested%20in%20your%20earrings%20collection!" target="_blank" class="floating-whatsapp" aria-label="WhatsApp Concierge" title="Chat with Jewellery Stylist">
+        <i class="fab fa-whatsapp"></i>
+        <span class="wa-tooltip">Chat with Stylist</span>
+    </a>
+
+    <!-- Toast Notification Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <!-- Luxury Footer -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-top-grid">
+                <!-- Brand Bio -->
+                <div class="footer-col-brand">
+                    <div class="logo">
+                        <div class="logo-crown-icon">
+                            <i class="fas fa-crown"></i>
                         </div>
+                        <div class="logo-text-group">
+                            <span class="brand-name">AURA <span class="gold-text">JEWELS</span></span>
+                            <span class="brand-tagline">Haute Joaillerie Atelier</span>
+                        </div>
+                    </div>
+                    <p class="footer-text">
+                        Aura Jewels curates regal earrings meticulously sculpted with certified 925 sterling silver, 
+                        natural pearls, Austrian crystals, and royal kundan for women of timeless grace.
+                    </p>
+                    <div class="footer-payments-icons">
+                        <span title="UPI Accepted"><i class="fas fa-mobile-alt"></i> UPI</span>
+                        <span title="Google Pay"><i class="fab fa-google-pay"></i> GPay</span>
+                        <span title="PhonePe"><i class="fas fa-wallet"></i> PhonePe</span>
+                        <span title="Visa / Mastercard"><i class="fas fa-credit-card"></i> Cards</span>
+                        <span title="Cash on Delivery"><i class="fas fa-money-bill-wave"></i> COD</span>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-col">
+                    <h4>Collections</h4>
+                    <ul class="footer-links">
+                        <li><a href="#products">Royal Kundan &amp; Jhumkas</a></li>
+                        <li><a href="#products">Austrian Crystal Drops</a></li>
+                        <li><a href="#products">Pure 925 Silver Studs</a></li>
+                        <li><a href="#products">Contemporary Gold Hoops</a></li>
+                        <li><a href="#featured">Festive Spotlight Picks</a></li>
+                    </ul>
+                </div>
+
+                <!-- Customer Care -->
+                <div class="footer-col">
+                    <h4>Patron Care</h4>
+                    <ul class="footer-links">
+                        <li><a href="#craftsmanship">Jewellery Purity &amp; Hallmarks</a></li>
+                        <li><a href="#craftsmanship">Anti-Tarnish Care Guide</a></li>
+                        <li><a href="#contact">Track Your Order</a></li>
+                        <li><a href="#contact">7-Day Replacement Policy</a></li>
+                        <li><a href="#contact">WhatsApp Concierge</a></li>
+                    </ul>
+                </div>
+
+                <!-- Developer Attribution -->
+                <div class="footer-col">
+                    <h4>Engineering &amp; Connect</h4>
+                    <p class="dev-tagline">Designed &amp; Architected with ❤️ by <br/><strong>Priyanshu Kumar Maurya</strong></p>
+                    <div class="footer-social-links">
+                        <a href="https://www.linkedin.com/in/priyanshu-kumar-maurya-808718281/" target="_blank" title="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/Priyanshu-kumar-maurya" target="_blank" title="GitHub Profile"><i class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/codexs_priyanshu/" target="_blank" title="Instagram Profile"><i class="fab fa-instagram"></i></a>
+                        <a href="https://priyanshu-kumar-maurya.github.io/Bio/" target="_blank" title="Portfolio Bio"><i class="fas fa-globe"></i></a>
                     </div>
                 </div>
             </div>
-            <div class="payment-options">
-                <label class="payment-option">
-                    <input type="radio" name="payment" value="upi">
-                    <div class="option-content">
-                        <i class="fas fa-mobile-alt"></i>
-                        <div>
-                            <h4>UPI Payment</h4>
-                            <p>Pay using UPI ID or QR Code</p>
-                        </div>
-                    </div>
-                </label>
-                <label class="payment-option">
-                    <input type="radio" name="payment" value="card">
-                    <div class="option-content">
-                        <i class="fas fa-credit-card"></i>
-                        <div>
-                            <h4>Credit/Debit Card</h4>
-                            <p>Pay using any major card</p>
-                        </div>
-                    </div>
-                </label>
-                <label class="payment-option">
-                    <input type="radio" name="payment" value="cod">
-                    <div class="option-content">
-                        <i class="fas fa-money-bill-wave"></i>
-                        <div>
-                            <h4>Cash on Delivery</h4>
-                            <p>Pay when you receive</p>
-                        </div>
-                    </div>
-                </label>
-            </div>
 
-            <!-- Payment Forms Container -->
-            <div class="payment-forms">
-                <!-- UPI Form -->
-                <div id="upi-form" class="payment-form">
-                    <h3>Enter UPI Details</h3>
-                    <div class="form-group">
-                        <input type="text" placeholder="Enter UPI ID (e.g., name@upi)">
-                    </div>
-                    <div class="form-group">
-                        <button class="pay-now-btn" onclick="processPayment('upi')">
-                            Pay Now <span id="upiAmount"></span>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Card Form -->
-                <div id="card-form" class="payment-form">
-                    <h3>Enter Card Details</h3>
-                    <div class="form-group">
-                        <input type="text" placeholder="Card Number" maxlength="16">
-                    </div>
-                    <div class="card-extra-details">
-                        <div class="form-group">
-                            <input type="text" placeholder="MM/YY" maxlength="5">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" placeholder="CVV" maxlength="3">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="Card Holder Name">
-                    </div>
-                    <div class="form-group">
-                        <button class="pay-now-btn" onclick="processPayment('card')">
-                            Pay Now <span id="cardAmount"></span>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- COD Form -->
-                <div id="cod-form" class="payment-form">
-                    <h3>Cash on Delivery</h3>
-                    <div class="cod-info">
-                        <p>Additional COD charges: ₹50</p>
-                        <p class="total-amount">Total Amount: <span id="codAmount"></span></p>
-                    </div>
-                    <div class="form-group">
-                        <button class="pay-now-btn" onclick="processPayment('cod')">
-                            Place Order
-                        </button>
-                    </div>
-                </div>
+            <div class="footer-bottom-strip">
+                <p>&copy; 2026 Aura Jewels / Elegant Earrings. All Rights Reserved. Handcrafted with Passion.</p>
+                <p class="designer-credit">
+                    Engineered by <a href="https://priyanshu-kumar-maurya.github.io/Bio/" target="_blank">Priyanshu Kumar Maurya</a> &bull; Full-Stack Web Architect
+                </p>
             </div>
         </div>
-    </div>
+    </footer>
 
+    <!-- Core Interactive Application Script -->
     <script src="script.js"></script>
 </body>
-
 </html>
-
